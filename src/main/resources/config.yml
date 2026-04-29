@@ -1,0 +1,35 @@
+server-id: "earth-1"
+
+auction:
+  default-duration-minutes: 1440
+  max-listings-per-player: 20
+  min-price: 1.0
+  max-price: 100000000.0
+  reservation-timeout-seconds: 30
+  page-size: 28
+  cache-refresh-seconds: 45
+  expiration-scan-seconds: 60
+  creating-recovery-minutes: 10
+
+messages:
+  no-permission: "&4&l✘ &cYou do not have permission."
+  player-only: "&4&l✘ &cOnly players can use this command."
+  reloaded: "&2&l✔ &aAuction configuration reloaded."
+  database-not-ready: "&4&l✘ &cThe auction database is not ready. Try again later."
+  redis-not-ready: "&e&l⚡ &eRedis sync is offline. Auctions still use MongoDB."
+  economy-not-ready: "&4&l✘ &cThe economy system is not ready. Ask staff to check Vault."
+  invalid-price: "&4&l✘ &cUse a price between %min% and %max%."
+  hold-item: "&4&l✘ &cHold the item you want to sell."
+  listed: "&2&l✔ &aYour item is now listed for &e%price%$&a."
+  list-failed: "&4&l✘ &cThe item could not be listed. Try again."
+  purchase-started: "&e&l⚡ &ePurchase in progress..."
+  purchase-success: "&2&l✔ &aYou bought this item. Open your claims to collect it."
+  purchase-unavailable: "&4&l✘ &cThis auction is no longer available. Open the menu again."
+  purchase-money: "&4&l✘ &cYou do not have enough money for this auction."
+  purchase-failed: "&4&l✘ &cThe purchase failed. Try again."
+  claim-success: "&2&l✔ &aYou claimed your reward."
+  claim-empty: "&e&l⚡ &eYou do not have anything to claim."
+  claim-full: "&4&l✘ &cYour inventory is full. Free some space and try again."
+  claim-failed: "&4&l✘ &cThis claim is no longer available."
+  seller-cannot-buy: "&4&l✘ &cYou cannot buy your own auction."
+  usage-sell: "&e&l⚡ &eUse &f/ah sell <price>&e while holding an item."

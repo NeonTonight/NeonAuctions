@@ -1,0 +1,49 @@
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    container_name: neon-auction-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: auction_admin
+      MONGODB_INITDB_ROOT_PASSWORD: change_this_password
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: neon-auction-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+
+  economy-mariadb:
+    image: mariadb:10.11
+    platform: linux/amd64
+    container_name: neon-auction-economy-mariadb
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_DATABASE: neon_economy_test
+      MARIADB_USER: economy_user
+      MARIADB_PASSWORD: change_this_password
+      MARIADB_ROOT_PASSWORD: change_this_root_password
+    volumes:
+      - economy_mariadb_data:/var/lib/mysql
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: neon-auction-redisinsight
+    restart: unless-stopped
+    ports:
+      - "5540:5540"
+    volumes:
+      - redisinsight_data:/data
+
+volumes:
+  mongodb_data:
+  economy_mariadb_data:
+  redisinsight_data:
