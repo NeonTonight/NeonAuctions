@@ -14,25 +14,11 @@ The plugin jar is created at:
 build/libs/NeonAuction-0.1.0-SNAPSHOT.jar
 ```
 
-## Local database test setup
+## Runtime requirements
 
-This does not install MongoDB or Redis on the PC. It only starts Docker containers.
+The plugin expects a reachable MongoDB server and Redis server.
 
-```bash
-docker compose -f docker-compose.test.yml up -d
-```
-
-Stop containers:
-
-```bash
-docker compose -f docker-compose.test.yml down
-```
-
-Delete local database test data:
-
-```bash
-docker compose -f docker-compose.test.yml down -v
-```
+Set the connection values in `plugins/NeonAuction/credentials.yml`.
 
 ## Plugin config
 
