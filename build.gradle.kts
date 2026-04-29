@@ -4,7 +4,6 @@ plugins {
 }
 
 group = "xyz.neontonight"
-version = "0.1.0-SNAPSHOT"
 description = "Folia-safe fixed-price auction house with MongoDB and Redis sync."
 
 repositories {
